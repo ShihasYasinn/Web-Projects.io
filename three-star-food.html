@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Three Star Food Products, Palakkad: Dry fruits, dried shrimp, and sweets & candys. Tradition Preserved. Taste Delivered." />
+  <title>Three Star Food Products | Palakkad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brown: #7c4f27;
+      --gold: #e2b76d;
+      --cream: #f8f5f0;
+      --accent: #bfa980;
+      --dark: #3e2723;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+    }
+    header {
+      background: var(--brown);
+      color: #fff;
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo .stars {
+      display: flex;
+      align-items: center;
+      gap: 0.1rem;
+      font-size: 1.3em;
+    }
+    .logo .stars .fa-star {
+      color: var(--gold);
+      text-shadow: 1px 1px 2px #3e2723;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(60, 34, 18, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+      text-shadow: 1px 1px 8px #3e2723;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      text-shadow: 1px 1px 8px #3e2723;
+    }
+    .hero .cta-btn {
+      background: var(--gold);
+      color: var(--brown);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(60,34,18,0.1);
+      transition: background 0.2s;
+    }
+    .hero .cta-btn:hover {
+      background: var(--accent);
+    }
+    section {
+      padding: 3rem 0 2rem 0;
+    }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--brown);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-text {
+      flex: 1 1 300px;
+      min-width: 250px;
+    }
+    .about-img {
+      flex: 1 1 250px;
+      min-width: 200px;
+      text-align: center;
+    }
+    .about-img img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(60,34,18,0.12);
+    }
+    .founder-section {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(60,34,18,0.08);
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .founder-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .founder-info {
+      flex: 1 1 400px;
+      min-width: 300px;
+    }
+    .founder-img {
+      flex: 1 1 200px;
+      min-width: 150px;
+    }
+    .founder-img img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 4px 12px rgba(60,34,18,0.15);
+    }
+    .experience-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--brown);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      margin: 1rem 0;
+      font-size: 1.1rem;
+    }
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(60,34,18,0.08);
+      padding: 1.5rem;
+      max-width: 320px;
+      flex: 1 1 250px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid var(--gold);
+    }
+    .product-card h3 {
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .product-card p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .product-card .price {
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 0.7rem;
+    }
+    .product-card .order-btn {
+      background: var(--brown);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-card .order-btn:hover {
+      background: var(--gold);
+      color: var(--brown);
+    }
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .gallery-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(60,34,18,0.08);
+      overflow: hidden;
+      width: 220px;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .testimonial {
+      font-style: italic;
+      color: var(--brown);
+      margin: 1rem 0 0.5rem 0;
+      font-size: 1rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .contact-details, .contact-form {
+      flex: 1 1 260px;
+      min-width: 220px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(60,34,18,0.08);
+    }
+    .contact-details h3 {
+      color: var(--brown);
+      margin-bottom: 0.7rem;
+    }
+    .contact-details p, .contact-details a {
+      color: var(--dark);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+      display: block;
+    }
+    .contact-details a:hover {
+      color: var(--gold);
+    }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid var(--accent);
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: var(--brown);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: var(--gold);
+      color: var(--brown);
+    }
+    .map {
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(60,34,18,0.08);
+      width: 100%;
+      min-height: 220px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pdf-download {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+    .pdf-download a {
+      background: var(--gold);
+      color: var(--brown);
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(60,34,18,0.08);
+      transition: background 0.2s;
+    }
+    .pdf-download a:hover {
+      background: var(--accent);
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 2px 12px rgba(60,34,18,0.18);
+      z-index: 200;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .whatsapp-btn:hover {
+      background: #128c7e;
+    }
+    footer {
+      background: var(--brown);
+      color: #fff;
+      text-align: center;
+      padding: 1.2rem 0 0.7rem 0;
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    @media (max-width: 800px) {
+      .about-content, .contact-info {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .products-grid {
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 1rem; }
+      section { padding: 2rem 0 1rem 0; }
+      .product-card { padding: 1rem; }
+      .about-img img { max-width: 95vw; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <span class="stars">
+          </span>
+          <span>Three Star Food Products</span>
+        </div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Tradition Preserved. Taste Delivered.</h1>
+      <p>Welcome to Three Star Food Products, Palakkad. Your trusted local source for the freshest dry fruits, hygienic dried shrimp, and delicious sweets & candys.</p>
+      <a href="#products" class="cta-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p><b>Three Star Food Products</b> is a family-run business rooted in the heart of Palakkad, Kerala. With a passion for quality and tradition, we bring you the finest dry fruits, dried shrimp, and a wide variety of sweets & candys. Our commitment is to source only the freshest ingredients, ensuring every bite is a taste of authenticity and care.</p>
+          <p>We pride ourselves on hygiene, customer satisfaction, and affordable prices. Visit our store or order online to experience the flavors that have delighted generations!</p>
+        </div>
+        <div class="about-img">
+          <img src="./trans.png" alt="Three Star Food Shop" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="products-grid">
+        <!-- Dry Fruits -->
+        <div class="product-card">
+          <img src="https://media.istockphoto.com/id/2213575384/photo/bowl-filled-with-organic-cashews-shot-from-above-on-wood-table.jpg?s=612x612&w=0&k=20&c=zt4fkebiwHnBk5RSKtWmtAE5JMsorB5qdkaqMmCE_tM=" alt="Dry Fruits" />
+          <h3><i class="fa-solid fa-seedling"></i> Dry Fruits</h3>
+          <p>Cashews, almonds, dates, raisins – handpicked for freshness and taste.</p>
+          <div class="price">From ₹120/100g</div>
+          <a href="https://wa.me/919999999999?text=I%20want%20to%20order%20dry%20fruits" class="order-btn" target="_blank">Order via WhatsApp</a>
+        </div>
+        <!-- Dried Shrimp -->
+        <div class="product-card">
+          <img src="https://media.istockphoto.com/id/1305535258/photo/dried-krill-for-backgrounds-or-textures.jpg?s=612x612&w=0&k=20&c=dkL7rm0PcqDvjzF0bfuzFec0_W2FLA1gnmtEhPz_MjM=" alt="Dried Shrimp" />
+          <h3><i class="fa-solid fa-shrimp"></i> Dried Shrimp</h3>
+          <p>Small, medium, and large varieties. Hygienically dried for long shelf life.</p>
+          <div class="price">Contact for pricing</div>
+          <a href="https://wa.me/919999999999?text=I%20want%20to%20order%20dried%20shrimp" class="order-btn" target="_blank">Order via WhatsApp</a>
+        </div>
+        <!-- Sweets & Candys -->
+        <div class="product-card">
+          <img src="https://beevisfoods.com/storage/media/zKeuSvWyVnANiOa7nNazJqcutSFYiupJXaEVvdYn.webp" alt="Sweets and Candys" />
+          <h3><i class="fa-solid fa-candy-cane"></i> Sweets & Candys</h3>
+          <p>A delightful range of sweets and candys – perfect for gifting or a sweet treat.</p>
+          <div class="price">From ₹10</div>
+          <a href="https://wa.me/919999999999?text=I%20want%20to%20order%20sweets%20and%20candys" class="order-btn" target="_blank">Order via WhatsApp</a>
+        </div>
+      </div>
+      <div class="pdf-download">
+        <a href="catalog.pdf" download><i class="fa-solid fa-file-pdf"></i> Download Product Catalog (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2>Gallery & Testimonials</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1127742967/photo/assorted-nuts-on-white-dry-fruits-mix-nuts-almond-cashew-raisins.jpg?s=612x612&w=0&k=20&c=LOEheZuAx03_qyUIaOjNjwd3ZRELwJmJU4ANLtbz-Qw=" alt="Product" />
+          <div class="testimonial">"Best dry fruits in town!"<br>- Asha, Palakkad</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1305535258/photo/dried-krill-for-backgrounds-or-textures.jpg?s=612x612&w=0&k=20&c=dkL7rm0PcqDvjzF0bfuzFec0_W2FLA1gnmtEhPz_MjM=" alt="Store" />
+          <div class="testimonial">"Fresh and hygienic dried shrimp."<br>- Manoj, Kerala</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/516234241/photo/fruit-jelly.jpg?s=612x612&w=0&k=20&c=hR1gCWe7diA2-FB8SSo_dQ5YBrhY29zSkz6bvvt5Lf4=" alt="Sweets and Candys" />
+          <div class="testimonial">"Reminds me of my childhood!"<br>- Priya, Coimbatore</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="contact-details">
+          <h3>Three Star Food Products</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Bpl kootupatha Marutharoad, Palakkad, Kerala</p>
+          <a href="tel:+919846637789"><i class="fa-solid fa-phone"></i> +91 9846637789</a>
+          <a href="https://wa.me/919846637789" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="mailto:threestarfoods@email.com"><i class="fa-solid fa-envelope"></i> threestarfoods@gmail.com</a>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            <div id="formMsg" style="margin-top:0.5rem;font-size:0.95rem;"></div>
+          </form>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=Bpl%20kootupatha%20Marutharoad%20Palakkad&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp-btn" href="https://wa.me/919999999999" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    &copy; 2025 Three Star Food Products, Palakkad. All rights reserved.<br>
+    <span style="font-size:0.95em;">Website by Three Star Food Products</span>
+  </footer>
+
+  <script>
+    // Contact form handler (demo only)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formMsg').textContent = 'Thank you for contacting us! We will get back to you soon.';
+      this.reset();
+    });
+  </script>
+</body>
+</html> 
